@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique | IMPACT - PC</title>
+    <link rel="icon" type="image/jpeg" href="/images/favicon.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="/images/logo.png" alt="IMPACT - PC">
+                <span><span class="text-warning fw-bold">IMPACT</span> - PC</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/boutique.html">Boutique</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+                    <li class="nav-item ms-3">
+                        <a href="/admin/login.html" class="btn btn-warning btn-sm fw-bold">
+                            <i class="fas fa-user-shield"></i> Admin
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Boutique -->
+    <section class="shop-hero">
+        <div class="container text-center">
+            <span class="shop-badge">CATALOGUE</span>
+            <h1 class="fw-bold text-white">Nos <span>Produits</span></h1>
+            <p>Découvrez notre sélection d'ordinateurs, accessoires et imprimantes.</p>
+        </div>
+    </section>
+
+    <!-- Barre de recherche (Ambony) -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Rechercher un produit...">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenu -->
+    <section class="shop-section">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Filtres (Sisiny havia) -->
+                <div class="col-lg-3">
+                    <div class="filter-card">
+                        <div class="filter-title">
+                            <div>
+                                <small>FILTRES</small>
+                                <h4>Affiner</h4>
+                            </div>
+                            <i class="fas fa-sliders-h"></i>
+                        </div>
+                        <div class="filter-line"></div>
+                        
+                        <div class="filter-group">
+                            <label><i class="fas fa-list"></i> Catégorie</label>
+                            <select id="categorieFilter" class="form-select">
+                                <option value="">Toutes les catégories</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label><i class="fas fa-tag"></i> Marque</label>
+                            <select id="marqueFilter" class="form-select">
+                                <option value="">Toutes les marques</option>
+                            </select>
+                        </div>
+
+                        <button class="reset-btn" onclick="resetFilters()">
+                            <i class="fas fa-redo"></i> Réinitialiser
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Vokatra -->
+                <div class="col-lg-9">
+                    <div class="products-top">
+                        <div>
+                            <span class="products-label">NOS PRODUITS</span>
+                            <h2>Découvrez notre sélection</h2>
+                        </div>
+                        <div class="product-count">
+                            <span id="productCount">0</span> produits
+                        </div>
+                    </div>
+                    <div class="row g-4" id="produits-list">
+                        <div class="col-12 text-center" style="color: #888; padding: 60px;">Chargement des produits...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <h5 class="text-warning fw-bold">IMPACT - PC</h5>
+            <p class="text-muted small mb-0">© 2026 IMPACT - PC | 67 HA, Antananarivo | 034 24 901 26</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

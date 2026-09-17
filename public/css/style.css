@@ -1,0 +1,1173 @@
+/* =========================================================
+   IMPACT - PC | STYLE MODERNE & ATTRACTIF
+   Theme : Blanc, Noir, Orange (#ff5722)
+   ========================================================= */
+
+:root {
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+    --bg-dark: #0d0d0d;
+    --bg-card: #ffffff;
+    --accent: #ff5722;
+    --accent-dark: #e64a19;
+    --text-dark: #1a1a1a;
+    --text-gray: #666666;
+    --border: #e9e9e9;
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    background: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* --- Navbar --- */
+.navbar {
+    background: rgba(255, 255, 255, 0.98) !important;
+    border-bottom: 1px solid var(--border);
+    padding: 15px 0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--text-dark) !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.navbar-brand img {
+    height: 40px;
+    width: auto;
+    border-radius: 8px;
+}
+.navbar-brand .text-warning { color: var(--accent) !important; }
+.navbar-nav .nav-link {
+    color: var(--text-dark) !important;
+    font-weight: 500;
+    margin-left: 15px;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--accent) !important;
+}
+
+/* --- Hero Section (Manaitra) --- */
+.hero-section {
+    min-height: 90vh;
+    padding-top: 100px;
+    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%), url('https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.hero-section h1 {
+    font-weight: 800;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    letter-spacing: -2px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+.hero-section p {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 30px;
+}
+.hero-section .badge {
+    background: var(--accent) !important;
+    color: #fff !important;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    padding: 8px 20px !important;
+    border-radius: 50px;
+    margin-bottom: 20px;
+}
+
+/* --- Sections --- */
+section { padding: 80px 0; }
+
+/* --- FANAMBOARANA: Ny "Produits Populaires" ho FOTSY (fa tsy mainty) --- */
+.products-section {
+    background: #0d0d0d !important;
+}
+.products-section .section-title {
+    color: #ffffff !important;
+}
+.products-section p {
+    color: #a0a0a0 !important;
+}
+.products-section .text-muted {
+    color: #a0a0a0 !important;
+}
+
+.section-title {
+    font-weight: 800;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* --- Boutons --- */
+.btn-warning {
+    background: var(--accent);
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 50px;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+}
+.btn-warning:hover {
+    background: var(--accent-dark);
+    transform: translateY(-3px);
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(255, 87, 34, 0.4);
+}
+.btn-outline-light {
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-weight: 600;
+    border: 2px solid #fff;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+}
+.btn-outline-light:hover {
+    background: #fff;
+    color: var(--text-dark);
+    border-color: #fff;
+    transform: translateY(-3px);
+}
+
+/* --- Product Cards --- */
+.product-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    height: 100%;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent);
+}
+.product-image {
+    height: 220px;
+    overflow: hidden;
+    background: #f4f4f4;
+}
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.product-card:hover .product-image img { transform: scale(1.08); }
+.product-info { padding: 25px; }
+.product-category {
+    color: var(--accent);
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+.product-info h3 {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.product-brand {
+    color: var(--text-gray);
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+.product-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.product-bottom strong { color: var(--accent); font-size: 1.1rem; font-weight: 800; }
+.detail-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--text-dark);
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.detail-btn:hover { background: var(--accent); transform: rotate(-45deg); }
+
+/* --- Feature Boxes --- */
+.feature-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+.feature-box:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+.feature-box i {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+.feature-box h5 {
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* --- Footer --- */
+footer {
+    background: var(--bg-dark) !important;
+    color: #aaa;
+    padding: 60px 0 20px;
+    border-top: 3px solid var(--accent);
+}
+footer h5 { color: var(--accent); font-weight: 700; }
+footer p { color: #999; font-size: 0.9rem; }
+footer i { color: var(--accent) !important; }
+
+/* --- FANAMBOARANA: Esory ny MAVO amin'ny "text-warning" --- */
+.text-warning {
+    color: var(--accent) !important;  /* Orange fa tsy Mavo */
+}
+.badge.bg-warning {
+    background: var(--accent) !important;
+    color: #fff !important;
+}
+
+/* --- Forms --- */
+.form-control, .form-select {
+    background: #fff;
+    border: 1px solid var(--border);
+    color: var(--text-dark);
+    border-radius: 10px;
+    padding: 12px 15px;
+}
+.form-control:focus, .form-select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.1);
+}
+.form-control::placeholder { color: #999; }
+
+/* --- Animations --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .hero-section h1 { font-size: 2.2rem; }
+    .section-title { font-size: 1.5rem; }
+    section { padding: 50px 0; }
+}
+/* =========================================================
+   FANAMBOARANA NY FOOTER (Mba hiseho ny soratra)
+   ========================================================= */
+
+footer {
+    background: #0d0d0d !important;
+    color: #ffffff !important;
+    padding: 60px 0 20px;
+    border-top: 3px solid #ff5722;
+}
+
+footer h5 {
+    color: #ff5722 !important;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* --- FANAMBOARANA: Ny "text-muted" ao amin'ny Footer ho FOTSY --- */
+footer p,
+footer .text-muted,
+footer .small {
+    color: #cccccc !important;  /* Fotsy maivana */
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+footer i {
+    color: #ff5722 !important;  /* Orange ho an'ny icon */
+    margin-right: 5px;
+}
+
+footer hr {
+    border-color: #333 !important;
+    margin: 30px 0 20px;
+}
+
+footer .small {
+    font-size: 0.8rem;
+    color: #888 !important;
+}
+
+/* =========================================================
+   FANAMBOARANA NY BOUTIQUE PAGE
+   ========================================================= */
+
+/* --- Shop Header (Boutique) --- */
+.shop-header {
+    background: #0d0d0d;
+    color: #fff;
+    padding: 130px 0 60px;
+    border-bottom: 2px solid var(--accent);
+    text-align: center;
+}
+.shop-header h1 { font-size: 3rem; font-weight: 800; letter-spacing: -1px; }
+.shop-header p { color: #a0a0a0; }
+
+/* --- Section Boutique --- */
+.shop-section { background: #0d0d0d; padding: 60px 0 100px; }
+
+/* --- Filtres --- */
+.filter-card {
+    background: #1a1a1a;
+    border: 1px solid #292929;
+    border-radius: 20px;
+    padding: 25px;
+    position: sticky;
+    top: 100px;
+}
+.filter-title { display: flex; align-items: center; justify-content: space-between; }
+.filter-title small { color: var(--accent); font-size: 0.68rem; letter-spacing: 1.5px; font-weight: 700; }
+.filter-title h4 { color: #fff; font-size: 1.1rem; margin: 5px 0 0; font-weight: 600; }
+.filter-title > i { color: var(--accent); font-size: 1.1rem; }
+.filter-line { height: 1px; background: #292929; margin: 22px 0; }
+.filter-group { margin-bottom: 22px; }
+.filter-group label { display: block; color: #ccc; font-size: 0.82rem; margin-bottom: 9px; font-weight: 500; }
+.filter-group label i { color: var(--accent); margin-right: 6px; }
+.filter-card .form-control,
+.filter-card .form-select {
+    background: #101010;
+    border: 1px solid #303030;
+    color: #ddd;
+    border-radius: 10px;
+    padding: 11px 13px;
+    font-size: 0.82rem;
+}
+.filter-card .form-control:focus,
+.filter-card .form-select:focus { border-color: var(--accent); box-shadow: none; }
+.filter-card .form-control::placeholder { color: #666; }
+.reset-btn {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #333;
+    color: #888;
+    padding: 11px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+.reset-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* --- Products Top --- */
+.products-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 28px;
+}
+.products-label { color: var(--accent); font-size: 0.68rem; font-weight: 700; letter-spacing: 2px; }
+.products-top h2 { color: #fff; font-size: 1.65rem; font-weight: 700; margin: 5px 0 0; }
+.product-count { color: #777; font-size: 0.8rem; }
+.product-count span { color: var(--accent); font-weight: 700; }
+
+/* --- Responsive Boutique --- */
+@media (max-width: 768px) {
+    .shop-header h1 { font-size: 2rem; }
+    .shop-header { padding: 100px 0 40px; }
+    .filter-card { position: static; }
+    .products-top { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+
+/* =========================================================
+   FANAMBOARANA NY SORATRA MAIZINA (Boutique)
+   ========================================================= */
+
+/* --- Header (Boutique) --- */
+.shop-header p,
+.shop-header .text-muted {
+    color: #cccccc !important;
+    font-size: 1rem;
+}
+
+/* --- Filtres (Boutique) --- */
+.filter-card .form-select,
+.filter-card .form-select option {
+    color: #dddddd !important;
+    background-color: #101010 !important;
+}
+
+/* --- Ny "Recherche" sy "Catégorie" sy "Marque" --- */
+.filter-group label {
+    color: #cccccc !important;
+    font-size: 0.85rem;
+}
+
+/* --- Ny "Toutes les catégories" sy "Toutes les marques" --- */
+.filter-card .form-select option {
+    color: #ddd !important;
+    background-color: #101010 !important;
+}
+
+/* --- Ny "Nos Produits" --- */
+.products-top h2 {
+    color: #ffffff !important;
+}
+
+/* --- Ny "0 produits" --- */
+.product-count {
+    color: #aaaaaa !important;
+}
+.product-count span {
+    color: #ff5722 !important;
+}
+
+/* --- Ny "Tsy misy vokatra hita" --- */
+.text-muted, .no-products {
+    color: #aaaaaa !important;
+}
+
+/* --- Footer (Ho Fotsy) --- */
+footer p,
+footer .text-muted,
+footer .small {
+    color: #cccccc !important;
+}
+
+/* --- Navbar Brand (Logo + Soratra) --- */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--text-dark) !important;
+}
+.navbar-brand img {
+    height: 40px;
+    width: auto;
+    border-radius: 8px;
+}
+.navbar-brand .text-warning {
+    color: var(--accent) !important;
+}
+
+/* =========================================================
+   CONTACT PAGE (Manaitra)
+   ========================================================= */
+
+/* --- Contact Hero --- */
+.contact-hero {
+    background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 100%), url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    border-bottom: 3px solid var(--accent);
+}
+.contact-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+.contact-hero p {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.85);
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    background: #0d0d0d;
+    padding: 80px 0;
+}
+
+/* --- Contact Cards --- */
+.contact-card {
+    background: #1a1a1a;
+    border: 1px solid #292929;
+    border-radius: 20px;
+    padding: 35px 25px;
+    text-align: center;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+.contact-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 40px rgba(255, 87, 34, 0.2);
+}
+.contact-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 20px;
+}
+.contact-card h5 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+.contact-card p {
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* --- Social Box --- */
+.social-box {
+    background: #1a1a1a;
+    border: 1px solid #292929;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+}
+.social-box h4 {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* --- Boutons Réseaux Sociaux --- */
+.btn-whatsapp {
+    background: #25d366;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    border: none;
+    transition: all 0.3s ease;
+}
+.btn-whatsapp:hover {
+    background: #1ebe5d;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+}
+.btn-messenger {
+    background: #0084ff;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    border: none;
+    transition: all 0.3s ease;
+}
+.btn-messenger:hover {
+    background: #0074e0;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 132, 255, 0.4);
+}
+.btn-facebook {
+    background: #1877f2;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    border: none;
+    transition: all 0.3s ease;
+}
+.btn-facebook:hover {
+    background: #1466c9;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(24, 119, 242, 0.4);
+}
+
+/* --- Map Box --- */
+.map-box {
+    background: #1a1a1a;
+    border: 1px solid #292929;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+}
+.map-box h4 {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .contact-hero { min-height: 350px; }
+    .contact-hero h1 { font-size: 2rem; }
+    .contact-section { padding: 50px 0; }
+    .social-box { padding: 25px; }
+}
+
+/* =========================================================
+   CONTACT PAGE (Manaitra)
+   ========================================================= */
+
+/* --- Contact Hero --- */
+.contact-hero {
+    background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 100%), url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    border-bottom: 3px solid var(--accent);
+}
+.contact-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+.contact-hero p {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.85);
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    background: #0d0d0d;
+    padding: 80px 0;
+}
+
+/* --- Contact Cards --- */
+.contact-card {
+    background: #1a1a1a;
+    border: 1px solid #292929;
+    border-radius: 20px;
+    padding: 35px 25px;
+    text-align: center;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+.contact-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 40px rgba(255, 87, 34, 0.2);
+}
+.contact-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 20px;
+}
+.contact-card h5 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+.contact-card p {
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* --- Social Box --- */
+.social-box {
+    background: #1a1a1a;
+    border: 1px solid #292929;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+}
+.social-box h4 {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* --- Boutons Réseaux Sociaux --- */
+.btn-whatsapp {
+    background: #25d366;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    border: none;
+    transition: all 0.3s ease;
+}
+.btn-whatsapp:hover {
+    background: #1ebe5d;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+}
+.btn-messenger {
+    background: #0084ff;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    border: none;
+    transition: all 0.3s ease;
+}
+.btn-messenger:hover {
+    background: #0074e0;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 132, 255, 0.4);
+}
+.btn-facebook {
+    background: #1877f2;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    border: none;
+    transition: all 0.3s ease;
+}
+.btn-facebook:hover {
+    background: #1466c9;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(24, 119, 242, 0.4);
+}
+
+/* --- Map Box --- */
+.map-box {
+    background: #1a1a1a;
+    border: 1px solid #292929;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+}
+.map-box h4 {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .contact-hero { min-height: 350px; }
+    .contact-hero h1 { font-size: 2rem; }
+    .contact-section { padding: 50px 0; }
+    .social-box { padding: 25px; }
+}
+
+/* =========================================================
+   BOUTIQUE PREMIUM (Barre de recherche + Boutons)
+   ========================================================= */
+
+/* --- Shop Hero --- */
+.shop-hero {
+    background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 100%), url('https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+    padding: 140px 0 80px;
+    border-bottom: 3px solid #ff5722;
+}
+.shop-badge {
+    color: #ff5722;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+.shop-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+.shop-hero h1 span { color: #ff5722; }
+.shop-hero p { color: #ccc; font-size: 1.1rem; max-width: 600px; margin: 15px auto 0; }
+
+/* --- Barre de recherche --- */
+.search-section {
+    background: #0d0d0d;
+    padding: 30px 0 10px;
+}
+.search-box {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+.search-box i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff5722;
+    font-size: 1rem;
+}
+.search-box input {
+    width: 100%;
+    padding: 15px 20px 15px 50px;
+    background: #1a1a1a;
+    border: 1px solid #292929;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+.search-box input:focus {
+    border-color: #ff5722;
+    box-shadow: 0 0 0 4px rgba(255, 87, 34, 0.15);
+}
+.search-box input::placeholder { color: #666; }
+
+/* --- Product Actions (Bouton roa) --- */
+.product-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+}
+.btn-whatsapp-card {
+    flex: 1;
+    background: #25d366;
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.btn-whatsapp-card:hover {
+    background: #1ebe5d;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+.btn-detail-card {
+    flex: 1;
+    background: #ff5722;
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.btn-detail-card:hover {
+    background: #e64a19;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 87, 34, 0.3);
+}
+
+/* --- Isan'ny sary amin'ny Card --- */
+.image-count {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 87, 34, 0.9);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+/* =========================================================
+   ADMIN PANEL | STYLE PROFESSIONNEL
+   ========================================================= */
+
+/* --- Sidebar --- */
+.admin-sidebar {
+    background: #000000;
+    min-height: 100vh;
+    padding: 30px 20px;
+    border-right: 1px solid #222;
+}
+.admin-sidebar h4 {
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+}
+.admin-sidebar h4 span { color: #ff5722; }
+.admin-sidebar hr {
+    border-color: #222;
+    margin: 0 0 25px 0;
+}
+.admin-sidebar .nav-link {
+    color: #888;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.admin-sidebar .nav-link i {
+    font-size: 1rem;
+    width: 20px;
+    text-align: center;
+}
+.admin-sidebar .nav-link:hover {
+    background: #1a1a1a;
+    color: #fff;
+}
+.admin-sidebar .nav-link.active {
+    background: #ff5722;
+    color: #fff;
+    font-weight: 600;
+}
+.admin-sidebar .nav-link.active i { color: #fff; }
+
+/* --- Admin Content --- */
+.admin-content {
+    background: #0d0d0d;
+    min-height: 100vh;
+    padding: 30px;
+}
+
+/* --- Page Title --- */
+.admin-title {
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    letter-spacing: -0.5px;
+}
+.admin-subtitle {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+/* --- Bouton Principal --- */
+.btn-admin-primary {
+    background: #ff5722;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn-admin-primary:hover {
+    background: #e64a19;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 87, 34, 0.3);
+}
+
+/* --- Tableau Admin --- */
+.admin-table-container {
+    background: #1a1a1a;
+    border: 1px solid #292929;
+    border-radius: 20px;
+    padding: 25px;
+    overflow: hidden;
+}
+.admin-table {
+    width: 100%;
+    margin: 0;
+    color: #fff;
+}
+.admin-table thead th {
+    color: #ff5722;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 15px;
+    border-bottom: 2px solid #292929;
+    background: transparent;
+}
+.admin-table tbody td {
+    padding: 15px;
+    vertical-align: middle;
+    border-bottom: 1px solid #222;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+.admin-table tbody tr:hover {
+    background: #202020;
+}
+.admin-table tbody tr:last-child td {
+    border-bottom: none;
+}
+.admin-table img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #292929;
+}
+.admin-table .product-name {
+    color: #fff;
+    font-weight: 600;
+}
+.admin-table .product-price {
+    color: #ff5722;
+    font-weight: 700;
+    font-size: 1rem;
+}
+.admin-table .product-stock {
+    font-weight: 600;
+}
+.admin-table .product-stock.in-stock { color: #25d366; }
+.admin-table .product-stock.out-stock { color: #ff4444; }
+
+/* --- Boutons Actions --- */
+.btn-action {
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    margin: 0 3px;
+}
+.btn-action-edit { background: #0084ff; }
+.btn-action-edit:hover { background: #0074e0; color: #fff; transform: scale(1.1); }
+.btn-action-delete { background: #ff4444; }
+.btn-action-delete:hover { background: #e63939; color: #fff; transform: scale(1.1); }
+
+/* --- Modal Admin --- */
+.admin-modal .modal-content {
+    background: #1a1a1a;
+    border: 1px solid #292929;
+    border-radius: 20px;
+}
+.admin-modal .modal-header {
+    border-bottom: 1px solid #292929;
+    padding: 20px 25px;
+}
+.admin-modal .modal-title {
+    color: #ff5722;
+    font-weight: 700;
+}
+.admin-modal .modal-body {
+    padding: 25px;
+}
+.admin-modal .modal-footer {
+    border-top: 1px solid #292929;
+    padding: 20px 25px;
+}
+.admin-modal label {
+    color: #ccc;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+.admin-modal .form-control,
+.admin-modal .form-select {
+    background: #101010;
+    border: 1px solid #303030;
+    color: #fff;
+    padding: 12px 15px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+.admin-modal .form-control:focus,
+.admin-modal .form-select:focus {
+    background: #101010;
+    color: #fff;
+    border-color: #ff5722;
+    box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.1);
+}
+.admin-modal .form-control::placeholder { color: #555; }
+.admin-modal .upload-box {
+    background: #101010;
+    border: 1px dashed #303030;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+.admin-modal .upload-box label {
+    color: #ff5722;
+    font-weight: 600;
+}
+.btn-admin-cancel {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.btn-admin-cancel:hover {
+    background: #444;
+    color: #fff;
+}
+
+/* --- Responsive Admin --- */
+@media (max-width: 768px) {
+    .admin-sidebar {
+        min-height: auto;
+        padding: 20px;
+    }
+    .admin-content { padding: 20px; }
+    .admin-title { font-size: 1.4rem; }
+    .admin-table { font-size: 0.8rem; }
+    .admin-table img { width: 40px; height: 40px; }
+}

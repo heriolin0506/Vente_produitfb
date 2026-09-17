@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion Produits | IMPACT - PC</title>
+    <link rel="icon" type="image/jpeg" href="/images/favicon.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body style="background: #0d0d0d;">
+
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div class="admin-sidebar" style="width: 250px;">
+            <h4 class="fw-bold mb-4" style="color: #fff;">
+                <span style="color: #ff5722;">IMPACT</span> - PC
+            </h4>
+            <hr style="border-color: #333;">
+            <ul class="nav flex-column">
+                <li class="nav-item"><a class="nav-link" href="/admin/dashboard.html"><i class="fas fa-tachometer-alt"></i> Tableau de bord</a></li>
+                
+                <li class="nav-item"><a class="nav-link active" href="/admin/produits.html"><i class="fas fa-box"></i> Produits</a></li>
+                            <li class="nav-item">
+    <a class="nav-link" href="/admin/parametres.html">
+        <i class="fas fa-cog"></i> Paramètres
+    </a>
+</li>
+                <li class="nav-item"><a class="nav-link" href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
+    
+            </ul>
+        </div>
+
+        <!-- Contenu -->
+        <div class="flex-grow-1 p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2 class="fw-bold mb-0" style="color: #fff;">Gestion des Produits</h2>
+                    <p style="color: #888; font-size: 0.9rem;">Jereo sy tantano ny vokatra rehetra</p>
+                </div>
+                <button class="btn fw-bold" style="background: #ff5722; color: #fff; padding: 12px 25px; border-radius: 50px;" data-bs-toggle="modal" data-bs-target="#produitModal" onclick="resetForm()">
+                    <i class="fas fa-plus"></i> Ajouter un produit
+                </button>
+            </div>
+            
+            <!-- Tableau -->
+            <div style="background: #1a1a1a; border-radius: 20px; padding: 20px; border: 1px solid #292929;">
+                <div class="table-responsive">
+                    <table class="table table-borderless" style="color: #fff; margin-bottom: 0;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid #292929;">
+                                <th style="color: #ff5722; font-weight: 700;">Image</th>
+                                <th style="color: #ff5722; font-weight: 700;">Nom</th>
+                                <th style="color: #ff5722; font-weight: 700;">Catégorie</th>
+                                <th style="color: #ff5722; font-weight: 700;">Prix</th>
+                                <th style="color: #ff5722; font-weight: 700;">Stock</th>
+                                <th style="color: #ff5722; font-weight: 700; text-align: center;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="produitsTable">
+                            <tr><td colspan="6" class="text-center" style="color: #888; padding: 40px;">Mbola tsy misy vokatra...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Ajouter/Modifier -->
+    <div class="modal fade" id="produitModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="background: #1a1a1a; border: 1px solid #292929; border-radius: 20px;">
+                <div class="modal-header" style="border-bottom: 1px solid #292929; padding: 20px;">
+                    <h5 class="modal-title fw-bold" style="color: #ff5722;" id="modalTitle">Ajouter un produit</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" style="padding: 25px;">
+                    <form id="produitForm">
+                        <input type="hidden" id="produitId">
+                        <div class="row">
+                            <!-- Nom -->
+                            <div class="col-md-6 mb-3">
+                                <label style="color: #ccc; font-size: 0.9rem;">Nom du produit</label>
+                                <input type="text" class="form-control" id="nom" required style="background: #101010; border: 1px solid #303030; color: #fff; padding: 12px;">
+                            </div>
+                            <!-- Catégorie -->
+                            <div class="col-md-6 mb-3">
+                                <label style="color: #ccc; font-size: 0.9rem;">Catégorie</label>
+                                <input type="text" class="form-control" id="categorie" required style="background: #101010; border: 1px solid #303030; color: #fff; padding: 12px;">
+                            </div>
+                            <!-- Marque -->
+                            <div class="col-md-6 mb-3">
+                                <label style="color: #ccc; font-size: 0.9rem;">Marque</label>
+                                <input type="text" class="form-control" id="marque" style="background: #101010; border: 1px solid #303030; color: #fff; padding: 12px;">
+                            </div>
+                            <!-- Prix -->
+                            <div class="col-md-3 mb-3">
+                                <label style="color: #ccc; font-size: 0.9rem;">Prix (Ar)</label>
+                                <input type="number" class="form-control" id="prix" required style="background: #101010; border: 1px solid #303030; color: #fff; padding: 12px;">
+                            </div>
+                            <!-- Stock -->
+                            <div class="col-md-3 mb-3">
+                                <label style="color: #ccc; font-size: 0.9rem;">Stock</label>
+                                <input type="number" class="form-control" id="stock" value="0" style="background: #101010; border: 1px solid #303030; color: #fff; padding: 12px;">
+                            </div>
+                            
+                            <!-- Sary roa (Upload + URL) -->
+                            <div class="col-md-12 mb-3">
+                                <label style="color: #ccc; font-size: 0.9rem;">Images (5 max)</label>
+                                
+                                <!-- Upload Fichier -->
+                                <div style="background: #101010; border: 1px solid #303030; border-radius: 10px; padding: 15px; margin-bottom: 10px;">
+                                    <label style="color: #ff5722; font-size: 0.85rem; font-weight: 600;">
+                                        <i class="fas fa-upload"></i> Upload (Fichier avy amin'ny ordinatera)
+                                    </label>
+                                    <input type="file" class="form-control mt-2" id="imagesFiles" multiple accept="image/*" style="background: #1a1a1a; border: 1px solid #303030; color: #fff;">
+                                    <small style="color: #888;">Safidio ny sary 5 farafahabetsany.</small>
+                                </div>
+
+                                <!-- URL -->
+                                <div style="background: #101010; border: 1px solid #303030; border-radius: 10px; padding: 15px;">
+                                    <label style="color: #ff5722; font-size: 0.85rem; font-weight: 600;">
+                                        <i class="fas fa-link"></i> URL (Rohy avy amin'ny Internet)
+                                    </label>
+                                    <textarea class="form-control mt-2" id="imagesUrl" rows="3" placeholder="https://...&#10;https://..." style="background: #1a1a1a; border: 1px solid #303030; color: #fff;"></textarea>
+                                    <small style="color: #888;">Ampidiro ny rohy, 1 isaky ny andalana.</small>
+                                </div>
+                            </div>
+
+                            <!-- Description -->
+                            <div class="col-12 mb-3">
+                                <label style="color: #ccc; font-size: 0.9rem;">Description</label>
+                                <textarea class="form-control" id="description" rows="3" style="background: #101010; border: 1px solid #303030; color: #fff; padding: 12px;"></textarea>
+                            </div>
+                            <!-- Specs -->
+                            <div class="col-12 mb-3">
+                                <label style="color: #ccc; font-size: 0.9rem;">Spécifications (Specs)</label>
+                                <textarea class="form-control" id="specs" rows="2" style="background: #101010; border: 1px solid #303030; color: #fff; padding: 12px;"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer" style="border-top: 1px solid #292929; padding: 20px;">
+                    <button type="button" class="btn" data-bs-dismiss="modal" style="background: #333; color: #fff; border-radius: 50px; padding: 10px 25px;">Annuler</button>
+                    <button type="button" class="btn fw-bold" style="background: #ff5722; color: #fff; border-radius: 50px; padding: 10px 25px;" onclick="saveProduit()">Enregistrer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/admin.js"></script>
+</body>
+</html>
