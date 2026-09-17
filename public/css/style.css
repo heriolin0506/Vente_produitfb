@@ -1171,3 +1171,291 @@ footer .small {
     .admin-table { font-size: 0.8rem; }
     .admin-table img { width: 40px; height: 40px; }
 }
+/* =========================================================
+   MOBILE OPTIMISATION (Tena ilaina)
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* --- Navbar Mobile --- */
+    .navbar {
+        padding: 10px 0;
+    }
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+    .navbar-brand img {
+        height: 35px;
+    }
+    .navbar-toggler {
+        border: 1px solid #ddd;
+        padding: 5px 8px;
+    }
+
+    /* --- Hero Section Mobile --- */
+    .hero-section {
+        min-height: 100vh;
+        padding: 100px 15px 60px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .hero-section .container {
+        padding: 0 15px;
+    }
+    .hero-section h1 {
+        font-size: 2rem;
+        line-height: 1.15;
+        letter-spacing: -1px;
+        margin-bottom: 15px;
+    }
+    .hero-section p {
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+    .hero-section .badge {
+        font-size: 0.7rem;
+        padding: 6px 15px !important;
+    }
+
+    /* --- Hero Buttons Mobile --- */
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    .hero-btn, .hero-whatsapp {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+        font-size: 0.85rem;
+    }
+
+    /* --- Sections Mobile --- */
+    section {
+        padding: 50px 0;
+    }
+    .section-title {
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+    }
+    .section-title::after {
+        width: 50px;
+        height: 3px;
+    }
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+
+    /* --- Product Cards Mobile --- */
+    .product-card {
+        border-radius: 15px;
+    }
+    .product-image {
+        height: 200px;
+    }
+    .product-info {
+        padding: 18px;
+    }
+    .product-info h3 {
+        font-size: 1rem;
+    }
+    .product-category {
+        font-size: 0.65rem;
+    }
+    .product-bottom strong {
+        font-size: 1rem;
+    }
+
+    /* --- Product Actions Mobile --- */
+    .product-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .btn-whatsapp-card, .btn-detail-card {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.8rem;
+    }
+
+    /* --- Footer Mobile --- */
+    footer {
+        padding: 40px 15px 20px;
+        text-align: center;
+    }
+    footer h5 {
+        font-size: 1rem;
+    }
+    footer p {
+        font-size: 0.8rem;
+    }
+
+    /* --- Shop Hero Mobile --- */
+    .shop-hero {
+        padding: 100px 15px 50px;
+    }
+    .shop-hero h1 {
+        font-size: 1.8rem;
+    }
+    .shop-hero p {
+        font-size: 0.9rem;
+    }
+
+    /* --- Search Box Mobile --- */
+    .search-box input {
+        padding: 12px 15px 12px 45px;
+        font-size: 0.85rem;
+    }
+
+    /* --- Filter Card Mobile --- */
+    .filter-card {
+        position: static;
+        padding: 20px;
+    }
+    .filter-title h4 {
+        font-size: 1rem;
+    }
+
+    /* --- Product Detail Mobile --- */
+    .product-detail {
+        padding-top: 100px;
+    }
+    #produitCarousel .carousel-item img {
+        height: 280px !important;
+    }
+    .product-thumbnail {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    /* --- Contact Page Mobile --- */
+    .contact-hero {
+        min-height: 300px;
+    }
+    .contact-hero h1 {
+        font-size: 1.8rem;
+    }
+    .contact-hero p {
+        font-size: 0.9rem;
+    }
+    .contact-card {
+        padding: 25px 20px;
+    }
+    .contact-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 1.4rem;
+    }
+    .contact-card h5 {
+        font-size: 1.05rem;
+    }
+    .contact-card p {
+        font-size: 0.85rem;
+    }
+    .social-box {
+        padding: 25px 20px;
+    }
+    .social-box h4 {
+        font-size: 1.1rem;
+    }
+    .btn-whatsapp, .btn-messenger, .btn-facebook {
+        padding: 12px 20px;
+        font-size: 0.85rem;
+    }
+    .map-box {
+        padding: 20px;
+    }
+
+    /* --- Admin Panel Mobile --- */
+    .admin-sidebar {
+        width: 100% !important;
+        min-height: auto;
+        padding: 15px;
+    }
+    .admin-sidebar h4 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+    .admin-sidebar .nav-link {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+    .admin-content {
+        padding: 20px 15px;
+    }
+    .admin-title {
+        font-size: 1.4rem;
+    }
+    .admin-subtitle {
+        font-size: 0.8rem;
+    }
+    .btn-admin-primary {
+        padding: 10px 20px;
+        font-size: 0.75rem;
+    }
+    .admin-table-container {
+        padding: 15px;
+    }
+    .admin-table {
+        font-size: 0.75rem;
+    }
+    .admin-table img {
+        width: 40px;
+        height: 40px;
+    }
+    .admin-table thead th {
+        padding: 10px;
+        font-size: 0.7rem;
+    }
+    .admin-table tbody td {
+        padding: 10px;
+    }
+    .btn-action {
+        width: 30px;
+        height: 30px;
+        font-size: 0.75rem;
+    }
+
+    /* --- Admin Login Mobile --- */
+    .admin-login-card {
+        margin: 20px;
+    }
+
+    /* --- Modal Mobile --- */
+    .modal-dialog {
+        margin: 10px;
+    }
+    .modal-body {
+        padding: 20px 15px;
+    }
+    .modal-footer {
+        padding: 15px;
+    }
+    .modal-footer .btn {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
+
+/* --- Small Phones (iPhone SE, etc.) --- */
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 1.7rem;
+    }
+    .section-title {
+        font-size: 1.2rem;
+    }
+    .product-image {
+        height: 180px;
+    }
+    .shop-hero h1 {
+        font-size: 1.5rem;
+    }
+    .contact-hero h1 {
+        font-size: 1.5rem;
+    }
+    .admin-title {
+        font-size: 1.2rem;
+    }
+}
